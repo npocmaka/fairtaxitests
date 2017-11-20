@@ -109,8 +109,12 @@ public class EstimateTrackPage {
     	dropOff.click();
     	dropOff.sendKeys(location);
     	Utils.sleep(2000);
-    	WebElement loc=(driver.findElements(By.xpath("//div[@class=\"pac-container pac-logo\"][2]/div"))).get(0);
-    	loc.click();
+	try {
+    	    WebElement loc=(driver.findElements(By.xpath("//div[@class=\"pac-container pac-logo\"][2]/div"))).get(0);
+    	    loc.click();
+	} catch (Throwable e) {
+    	    e.printStackTrace();
+    	}
     	Utils.sleep(300); 	
     }
     
